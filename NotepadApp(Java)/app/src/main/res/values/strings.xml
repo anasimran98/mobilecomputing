@@ -8,6 +8,12 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="nav_open">Open</string>
     <string name="nav_close">Close</string>
+    <string name="notes">Notes</string>
+    <string name="add_new_note">Add New Note</string>
+    <string name="title">Title</string>
+    <string name="descriptioin">Descriptioin</string>
+    <string name="description">Descriptioin</string>
+    <string name="add_new_note1">Add New Note</string>
 
 
 </resources>

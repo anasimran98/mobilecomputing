@@ -12,12 +12,16 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.example.notepadapp.fragments.AllNotes;
 import com.example.notepadapp.fragments.FavouriteNotes;
 import com.example.notepadapp.fragments.HiddenNotes;
 import com.example.notepadapp.fragments.ReminderNotes;
 import com.google.android.material.navigation.NavigationView;
 
-import com.example.notepadapp.fragments.AllNotes;
+import java.util.Objects;
+
+import io.realm.Realm;
+import io.realm.RealmConfiguration;
 
 public class MainActivity extends AppCompatActivity {
     public ActionBarDrawerToggle actionBarDrawerToggle;
@@ -28,6 +32,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Realm.init( this);
+        String realmName = "Notepad";
+        RealmConfiguration config = new RealmConfiguration.Builder().name(realmName).build();
+        Realm.getInstance(config);
+
         replaceFragments(AllNotes.getInstance());
         intViews();
         intDrawer();
@@ -40,10 +50,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void intDrawer() {
-        
         actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerlayout, R.string.nav_open, R.string.nav_close);
         drawerlayout.addDrawerListener(actionBarDrawerToggle);
+        Objects.requireNonNull(getSupportActionBar()).setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_baseline_menu_24);
             navView.setNavigationItemSelectedListener(menuItem -> {
                 int id=menuItem.getItemId();
                 if(id == R.id.all_notes)
