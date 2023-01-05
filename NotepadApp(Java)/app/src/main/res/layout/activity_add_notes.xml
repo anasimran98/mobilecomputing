@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#888480"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:paddingTop="50dp"
+        android:layout_marginRight="50dp"
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="50dp"
+            android:textSize="30dp"
+            android:textColor="@color/black"
+            android:layout_gravity="center"
+            android:text="Add New Note"/>
+
+        <EditText
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:hint="Title"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_height="50dp" />
+
+        <EditText
+            android:id="@+id/description"
+            android:layout_width="match_parent"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:hint="Description"
+            android:layout_height="50dp" />
+
+        <EditText
+            android:id="@+id/day"
+            android:layout_width="match_parent"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:hint="Day"
+            android:layout_height="50dp" />
+
+        <EditText
+            android:id="@+id/date_time"
+            android:layout_width="match_parent"
+            android:hint="Date and Time"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_height="50dp" />
+
+        <Button
+            android:id="@+id/add_timetable"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:backgroundTint="@color/material_dynamic_neutral0"
+            android:textColor="@color/white"
+            android:text="Add" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.constraintlayout.widget.ConstraintLayout>
